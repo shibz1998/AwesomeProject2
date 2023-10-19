@@ -80,8 +80,8 @@ const LoginForm = () => {
           title={'Submit'}
           onPress={() => {
             validate();
-            if (validate() === false) {
-              Alert.alert('Success', 'Form Submitted');
+            if (validate() === true) {
+              Alert.alert('Success', 'USER AUTHENTICATED');
             }
           }}
         />
@@ -112,3 +112,117 @@ const styles = StyleSheet.create({
 });
 
 export default LoginForm;
+
+// //Chat Gpt CODE FOR IMPROVEMNT Below:
+// //Chat Gpt CODE FOR IMPROVEMNT Below:
+// //Chat Gpt CODE FOR IMPROVEMNT Below:
+
+// import React, {useState} from 'react';
+// import {
+//   Text,
+//   View,
+//   TextInput,
+//   Button,
+//   ScrollView,
+//   SafeAreaView,
+//   StyleSheet,
+//   Alert,
+// } from 'react-native';
+
+// const LoginForm = () => {
+//   const [formData, setFormData] = useState({
+//     username: '',
+//     password: '',
+//     verifyPassword: '',
+//   });
+//   const [message, setMessage] = useState('');
+
+//   const handleInputChange = (key, text) => {
+//     setFormData({
+//       ...formData,
+//       [key]: text,
+//     });
+//   };
+
+//   const validate = () => {
+//     if (
+//       formData.username === '' ||
+//       formData.password === '' ||
+//       formData.verifyPassword === ''
+//     ) {
+//       setMessage('*Please Fill in All Fields*');
+//     } else if (formData.password !== formData.verifyPassword) {
+//       setMessage('*Passwords Do Not Match*');
+//     } else {
+//       setMessage(
+//         `Welcome, ${formData.username}! You have successfully logged in.`,
+//       );
+//       return true;
+//     }
+//     return false;
+//   };
+
+//   return (
+//     <ScrollView contentContainerStyle={styles.container}>
+//       <Text style={styles.titleText}>LOGIN FORM</Text>
+//       <TextInput
+//         style={styles.input}
+//         placeholder="Enter Your Username"
+//         value={formData.username}
+//         onChangeText={text => handleInputChange('username', text)}
+//       />
+//       <TextInput
+//         style={styles.input}
+//         placeholder="Enter password"
+//         value={formData.password}
+//         onChangeText={text => handleInputChange('password', text)}
+//         secureTextEntry={true}
+//       />
+//       <TextInput
+//         style={styles.input}
+//         placeholder="Verify password"
+//         value={formData.verifyPassword}
+//         onChangeText={text => handleInputChange('verifyPassword', text)}
+//         secureTextEntry={true}
+//       />
+//       <Button
+//         title="Submit"
+//         onPress={() => {
+//           if (validate()) {
+//             Alert.alert('Success', 'Form Submitted');
+//           }
+//         }}
+//       />
+//       <Text style={styles.messageText}>{message}</Text>
+//     </ScrollView>
+//   );
+// };
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     backgroundColor: '#c1bbfb',
+//   },
+//   titleText: {
+//     fontSize: 20,
+//     fontWeight: 'bold',
+//     textAlign: 'center',
+//     marginBottom: 20,
+//   },
+//   input: {
+//     height: 40,
+//     width: '80%',
+//     borderColor: 'black',
+//     borderWidth: 1,
+//     marginBottom: 10,
+//     paddingLeft: 10,
+//   },
+//   messageText: {
+//     color: 'red',
+//     marginTop: 10,
+//   },
+// });
+
+// export default LoginForm;
