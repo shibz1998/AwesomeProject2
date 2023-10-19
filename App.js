@@ -30,6 +30,9 @@ import AgeCalculator from './src/components/AgeCalculator';
 
 import LoginForm from './src/components/LoginForm';
 
+import RollDie from './src/components/DieRoll';
+import DieRoll from './src/components/DieRoll';
+
 function App() {
   console.log('Running Main App--------');
 
@@ -79,6 +82,12 @@ function App() {
           <Text>----------------------------------------</Text>
         </View>
         <LoginForm />
+
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+          <Text>----------------------------------------</Text>
+        </View>
+
+        <DieRoll />
       </ScrollView>
     </View>
   );
