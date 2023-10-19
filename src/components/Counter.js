@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {View, Text, Button, StyleSheet} from 'react-native';
 
-const StateFunc = props => {
+const Counter = props => {
   const [count, setCount] = useState(0);
 
   const increment = () => {
@@ -21,10 +21,8 @@ const StateFunc = props => {
 
       <Button title="Increment" onPress={increment} />
       <Button title="Decrement" onPress={decrement} />
-
-      <Text>-------------------------------------------------</Text>
     </View>
   );
 };
 
-export default StateFunc;
+export default Counter;

@@ -24,7 +24,7 @@ import MyTestComponent from './src/components/MyTestComponent';
 import TestComponent from './src/components/TestComponent';
 //import YearChecker from './src/components/YearChecker';
 import MyTestFuncComponent from './src/components/MyTestFuncComponent';
-import StateFunc from './src/components/StateFunc';
+import Counter from './src/components/Counter';
 import UserInput from './src/components/UserInput';
 
 import AgeCalculator from './src/components/AgeCalculator';
@@ -70,7 +70,7 @@ function App() {
         </TouchableOpacity> */}
         {/* <MyTestComponent bgColor="pink" testKey="testValue" />
         <MyTestFuncComponent bgColor="yellow" score={99} /> */}
-        <StateFunc />
+        <Counter />
         <UserInput />
 
         <AgeCalculator />
