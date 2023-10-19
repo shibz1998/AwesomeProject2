@@ -38,7 +38,7 @@ function App() {
           <YearChecker />
         </View> */}
 
-        <TestComponent name="Shiblu" yearborn={2001} />
+        {/* <TestComponent name="Shiblu" yearborn={2001} /> */}
 
         {/* <Text>First Name</Text>
         <TextInput style={{height: 40, backgroundColor: '#c1bbfb'}} />
@@ -60,7 +60,7 @@ function App() {
           }}
         /> */}
 
-        <TouchableOpacity>
+        {/* <TouchableOpacity>
           <Image
             source={{
               width: 200,
@@ -69,7 +69,7 @@ function App() {
               uri: 'https://picsum.photos/200/300',
             }}
           />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
         {/* <MyTestComponent bgColor="pink" testKey="testValue" />
         <MyTestFuncComponent bgColor="yellow" score={99} /> */}

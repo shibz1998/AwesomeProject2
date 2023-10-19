@@ -2,27 +2,32 @@ import React, {useState} from 'react';
 import {View, Text, Button, TextInput} from 'react-native';
 
 const UserInput = () => {
-  const [name, setName] = useState('');
-  const [showWelcome, setShowWelcome] = useState(false);
+  const [username, setUsername] = useState('');
+  const [message, setMessage] = useState('');
 
-  const handleInputChange = text => {
-    setName(text);
+  const handleWelcome = () => {
+    console.log(username);
+    if (username === '') {
+      setMessage('Enter your username');
+    } else {
+      setMessage(`Welcome, ${username}!`);
+    }
   };
 
-  const handleShowWelcome = () => {
-    setShowWelcome(true);
+  const handleUsernameChange = text => {
+    setUsername(text);
+    setMessage(''); // Clear the welcome message
   };
 
   return (
-    <View>
-      <Text>Welcome to My App</Text>
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
       <TextInput
-        placeholder="Enter your name for welcome screen"
-        value={name}
-        onChangeText={handleInputChange}
+        placeholder="Enter your username"
+        value={username}
+        onChangeText={handleUsernameChange}
       />
-      <Button title="Show Welcome" onPress={handleShowWelcome} />
-      {showWelcome && <Text>Welcome, {name}!</Text>}
+      <Button title="Welcome" onPress={handleWelcome} />
+      <Text>{message}</Text>
     </View>
   );
 };

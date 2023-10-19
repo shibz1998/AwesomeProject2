@@ -9,7 +9,7 @@ const TestComponent = props => {
   return (
     <View style={{backgroundColor: '#c1bbfb'}}>
       <Text style={styles.baseText}>
-        <Text style={styles.titleText}>Welcome to My App 2</Text>
+        <Text style={styles.titleText}>Welcome to My Awesome APP 2</Text>
         {'\n'}
         {'\n'}
         <Text style={styles.titleText}>You were born in {yearborn} </Text>

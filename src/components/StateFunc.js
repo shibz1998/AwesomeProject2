@@ -9,7 +9,9 @@ const StateFunc = props => {
   };
 
   const decrement = () => {
-    setCount(count - 1);
+    if (count > 0) {
+      setCount(count - 1);
+    }
   };
 
   console.log('Running StateComponent');
@@ -18,6 +20,9 @@ const StateFunc = props => {
       <Text>This is a Counter State Component {count}</Text>
 
       <Button title="Increment" onPress={increment} />
+      <Button title="Decrement" onPress={decrement} />
+
+      <Text>-------------------------------------------------</Text>
     </View>
   );
 };
