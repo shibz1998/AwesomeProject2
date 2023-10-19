@@ -8,13 +8,14 @@ const UserInput = () => {
   const handleWelcome = () => {
     console.log(username);
     if (username === '') {
-      setMessage('Enter your username');
+      setMessage('*Please enter your username*');
     } else {
       setMessage(`Welcome, ${username}!`);
     }
   };
 
   const handleUsernameChange = text => {
+    console.log('After keyboard input' + username);
     setUsername(text);
     setMessage(''); // Clear the welcome message
   };

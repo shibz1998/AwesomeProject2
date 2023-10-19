@@ -30,6 +30,8 @@ import UserInput from './src/components/UserInput';
 import AgeCalculator from './src/components/AgeCalculator';
 
 function App() {
+  console.log('Running Main App--------');
+
   return (
     <View style={{flex: 1, marginTop: 30, marginHorizontal: 10}}>
       <ScrollView>
@@ -37,9 +39,7 @@ function App() {
           <Text>Welcome to My App</Text>
           <YearChecker />
         </View> */}
-
         {/* <TestComponent name="Shiblu" yearborn={2001} /> */}
-
         {/* <Text>First Name</Text>
         <TextInput style={{height: 40, backgroundColor: '#c1bbfb'}} />
 
@@ -51,7 +51,6 @@ function App() {
 
         <Text>Country</Text>
         <TextInput style={{height: 40, backgroundColor: '#c1bbfb'}} /> */}
-
         {/* <Button
           title={'Submit'}
           onPress={() => {
@@ -59,7 +58,6 @@ function App() {
             console.log('Button Pressed');
           }}
         /> */}
-
         {/* <TouchableOpacity>
           <Image
             source={{
@@ -70,12 +68,9 @@ function App() {
             }}
           />
         </TouchableOpacity> */}
-
         {/* <MyTestComponent bgColor="pink" testKey="testValue" />
         <MyTestFuncComponent bgColor="yellow" score={99} /> */}
-
         <StateFunc />
-
         <UserInput />
 
         <AgeCalculator />

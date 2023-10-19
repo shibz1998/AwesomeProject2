@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {View, Text, TextInput, Button, StyleSheet} from 'react-native';
 
 const AgeCalculator = () => {
+  console.log('Entering AgeCalulator');
   const [birthYear, setBirthYear] = useState('');
   const [age, setAge] = useState('');
 
