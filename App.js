@@ -4,7 +4,6 @@
  *
  * @format
  */
-
 import React from 'react';
 import {
   Text,
@@ -28,6 +27,8 @@ import Counter from './src/components/Counter';
 import UserInput from './src/components/UserInput';
 
 import AgeCalculator from './src/components/AgeCalculator';
+
+import LoginForm from './src/components/LoginForm';
 
 function App() {
   console.log('Running Main App--------');
@@ -70,10 +71,14 @@ function App() {
         </TouchableOpacity> */}
         {/* <MyTestComponent bgColor="pink" testKey="testValue" />
         <MyTestFuncComponent bgColor="yellow" score={99} /> */}
+
         <Counter />
         <UserInput />
-
         <AgeCalculator />
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+          <Text>----------------------------------------</Text>
+        </View>
+        <LoginForm />
       </ScrollView>
     </View>
   );
