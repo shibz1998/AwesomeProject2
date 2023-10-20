@@ -16,8 +16,6 @@ const LoginForm = () => {
   const [verifyPassword, setVerifyPassword] = useState('');
   const [message, setMessage] = useState('');
 
-  const [messageStyle, setMessageStyle] = useState({color: 'red'});
-
   const handleUsernameChange = text => {
     setUsername(text);
     console.log(username);
@@ -35,19 +33,19 @@ const LoginForm = () => {
 
   const validate = () => {
     if (username === '' || password === '' || verifyPassword === '') {
-      setMessageStyle({color: 'red'});
       setMessage('*Please Fill the Blanks*');
     } else if (password !== verifyPassword) {
-      setMessageStyle({color: 'red'});
       setMessage('*Password Do not match*');
     } else {
-      setMessageStyle({color: 'green'});
       setMessage(
         `Welcome, ${username}!, your password is ${password}. You have successfully logged in `,
       );
       return true;
     }
   };
+
+  const passmatch = password === verifyPassword && username !== '';
+  const message_Style = {color: passmatch ? 'green' : 'red'};
 
   return (
     <ScrollView>
@@ -91,7 +89,7 @@ const LoginForm = () => {
           }}
         />
 
-        <Text style={[styles.messageText, messageStyle]}>{message}</Text>
+        <Text style={message_Style}>{message}</Text>
       </View>
     </ScrollView>
   );
