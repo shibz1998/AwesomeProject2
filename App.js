@@ -88,6 +88,8 @@ function App() {
         </View>
 
         <DieRoll />
+        <DieRoll />
+        <DieRoll />
       </ScrollView>
     </View>
   );
