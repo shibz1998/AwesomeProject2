@@ -33,12 +33,24 @@ import LoginForm from './src/components/LoginForm';
 import RollDie from './src/components/DieRoll';
 import DieRoll from './src/components/DieRoll';
 
+import ClassComponent from './src/components/ClassComponent';
+
 function App() {
   console.log('Running Main App--------');
 
   return (
     <View style={{flex: 1, marginTop: 30, marginHorizontal: 10}}>
       <ScrollView>
+        <ClassComponent
+          data={[
+            {name: 'John Doe', age: 11},
+            {name: 'Alice Smith', age: 25},
+            {name: 'Bob Johnson', age: 40},
+            {name: 'Eva Williams', age: 32},
+            {name: 'Michael Brown', age: 35},
+          ]}
+        />
+
         {/* <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
           <Text>Welcome to My App</Text>
           <YearChecker />
@@ -75,7 +87,7 @@ function App() {
         {/* <MyTestComponent bgColor="pink" testKey="testValue" />
         <MyTestFuncComponent bgColor="yellow" score={99} /> */}
 
-        <Counter />
+        {/* <Counter />
         <UserInput />
         <AgeCalculator />
         <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
@@ -86,10 +98,12 @@ function App() {
         <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
           <Text>----------------------------------------</Text>
         </View>
+        <DieRoll />
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+          <Text>----------------------------------------</Text>
+        </View>
 
-        <DieRoll />
-        <DieRoll />
-        <DieRoll />
+ */}
       </ScrollView>
     </View>
   );
