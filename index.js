@@ -1,13 +1,24 @@
-// In index.js of a new project
 import React from 'react';
 import {View, Text, Button, StyleSheet} from 'react-native';
 import {Navigation} from 'react-native-navigation';
 
-// Home screen declaration
+const LoginScreen = () => {
+  return (
+    <View style={styles.root}>
+      <Button
+        title="Login"
+        color="#710ce3"
+        onPress={() => Navigation.setRoot(mainRoot)}
+      />
+    </View>
+  );
+};
+
 const HomeScreen = props => {
   return (
     <View style={styles.root}>
       <Text>Hello React Native Navigation 👋</Text>
+
       <Button
         title="Push Settings Screen"
         color="#710ce3"
@@ -15,13 +26,6 @@ const HomeScreen = props => {
           Navigation.push(props.componentId, {
             component: {
               name: 'Settings',
-              options: {
-                topBar: {
-                  title: {
-                    text: 'Settings',
-                  },
-                },
-              },
             },
           })
         }
@@ -35,9 +39,11 @@ HomeScreen.options = {
       text: 'Home',
     },
   },
+  bottomTab: {
+    text: 'Home',
+  },
 };
 
-// Settings screen declaration - this is the screen we'll be pushing into the stack
 const SettingsScreen = () => {
   return (
     <View style={styles.root}>
@@ -45,9 +51,58 @@ const SettingsScreen = () => {
     </View>
   );
 };
+SettingsScreen.options = {
+  topBar: {
+    title: {
+      text: 'Settings',
+    },
+  },
+  bottomTab: {
+    text: 'Settings',
+  },
+};
 
+Navigation.registerComponent('Login', () => LoginScreen);
 Navigation.registerComponent('Home', () => HomeScreen);
 Navigation.registerComponent('Settings', () => SettingsScreen);
+
+const mainRoot = {
+  root: {
+    bottomTabs: {
+      children: [
+        {
+          stack: {
+            children: [
+              {
+                component: {
+                  name: 'Home',
+                },
+              },
+            ],
+          },
+        },
+        {
+          stack: {
+            children: [
+              {
+                component: {
+                  name: 'Settings',
+                },
+              },
+            ],
+          },
+        },
+      ],
+    },
+  },
+};
+const loginRoot = {
+  root: {
+    component: {
+      name: 'Login',
+    },
+  },
+};
 
 Navigation.setDefaultOptions({
   statusBar: {
@@ -64,22 +119,18 @@ Navigation.setDefaultOptions({
       color: '#4d089a',
     },
   },
+  bottomTab: {
+    fontSize: 14,
+    selectedFontSize: 14,
+  },
 });
 Navigation.events().registerAppLaunchedListener(async () => {
-  Navigation.setRoot({
-    root: {
-      stack: {
-        children: [
-          {
-            component: {
-              name: 'Home',
-            },
-          },
-        ],
-      },
-    },
-  });
+  Navigation.setRoot(isLoggedIn() ? mainRoot : loginRoot);
 });
+
+function isLoggedIn() {
+  // TODO: your business logic goes here
+}
 
 const styles = StyleSheet.create({
   root: {
