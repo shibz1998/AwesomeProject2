@@ -61,7 +61,7 @@ const loginRoot = {
 
 Navigation.setDefaultOptions({
   statusBar: {
-    backgroundColor: 'red',
+    backgroundColor: '#4d089a',
   },
   topBar: {
     title: {
